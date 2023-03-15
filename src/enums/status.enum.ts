@@ -1,0 +1,6 @@
+export enum Status {
+  ONGOING = "ONGOING",
+  COMPLETED = "COMPLETED",
+  CANCELLED = "CANCELLED",
+  PUBLISHED = "PUBLISHED",
+}
