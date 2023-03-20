@@ -1,9 +1,11 @@
 import { Application } from "@prisma/client";
-import { Status } from "./Status";
+import { ResponseStatus } from "./Status";
 
 export interface Response {
   message: string;
   error?: string;
   application?: Application;
-  status: Status;
+  applications?: Application[];
+  status: ResponseStatus;
+  access_token?: string;
 }

@@ -4,7 +4,7 @@ import { AuthService } from "./auth.service";
 
 @Controller("auth")
 export class AuthController {
-  constructor(private AuthService: AuthService) {}
+  constructor(private AuthService: AuthService) { }
 
   @HttpCode(HttpStatus.CREATED)
   @Post("signup")
@@ -16,6 +16,11 @@ export class AuthController {
   @Post("/signin")
   async SignIn(@Body() dto: AuthDTO) {
     return this.AuthService.SignIn(dto);
+  }
+
+  @Post("/seed_admin")
+  async seedAdmin(@Body() dto: AuthDTO) {
+    return this.AuthService.seedAdmin(dto);
   }
 
   @Post("/admin_signin")

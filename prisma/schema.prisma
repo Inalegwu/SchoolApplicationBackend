@@ -6,11 +6,11 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
+  provider = "mysql"
   url      = env("DATABASE_URL")
 }
 
-enum Course{
+enum Course {
   JAVA
   JAVAJAVA
   JAVANETWORKING
@@ -19,22 +19,22 @@ enum Course{
   GRAPHICS
 }
 
-enum Status{
+enum Status {
   PENDING
   APPROVED
   DECLINED
 }
 
-model User{
+model User {
   id Int @id @default(autoincrement())
 
-  email String @unique
-  hash String
+  email     String @unique
+  hash      String
   firstName String
-  lastName String
+  lastName  String
 
   applicationId Int?
-  application Application? @relation(fields: [applicationId],references: [id])
+  application   Application? @relation(fields: [applicationId], references: [id])
 }
 
 model Application {
@@ -62,9 +62,8 @@ model Application {
   user User[]
 }
 
-
-model Admin{
-  id Int @id @default(autoincrement())
+model Admin {
+  id    Int    @id @default(autoincrement())
   email String
   hash  String
 }
