@@ -7,5 +7,6 @@ import { AuthModule } from "src/auth/auth.module";
 @Module({
   providers: [ApplicantService, PrismaService],
   controllers: [ApplicantController],
+  imports: [AuthModule]
 })
 export class ApplicantModule { }

@@ -7,6 +7,7 @@ import { PrismaModule } from "./prisma/prisma.module";
 import { ApplicationModule } from './application/application.module';
 import { AdminModule } from './admin/admin.module';
 import { ApplicantModule } from './applicant/applicant.module';
+import { JwtModule, JwtService } from "@nestjs/jwt";
 
 
 @Module({
@@ -16,9 +17,9 @@ import { ApplicantModule } from './applicant/applicant.module';
     ConfigModule.forRoot({ isGlobal: true }),
     ApplicationModule,
     AdminModule,
-    ApplicantModule
+    ApplicantModule,
   ],
   controllers: [AppController],
   providers: [AppService],
 })
-export class AppModule {}
+export class AppModule { }
